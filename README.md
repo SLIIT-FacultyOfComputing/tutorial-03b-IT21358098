@@ -14,15 +14,16 @@ You have to use the following commands in the <iomanip> header file
 
   ```c++
 #include <iostream>
+#include <iomanip>  
 using namespace std;
 int main() {
    float marks[] = {78.4, 90.6, 45.9, 72.2, 54.4};
    char names[][20] = {"Ajith", "Wimal", "Kanthi", "Suranji", "Kushmitha"};
    cout << "No" << "Name" << "Marks" << endl;
    for (int r = 0; r < 5; r++) {
-       cout <<  r+1 
-            <<  names[r]
-            << marks[r] << endl;
+      <<setw(5) cout <<  r+1 
+            <<setw(15)<<  names[r]
+           <<setw(10) << setiosflag (ios::fixed) << setprecision(2) << marks[r] << endl;
    }
 }
 ```
@@ -83,6 +84,10 @@ int main() {
 }
 
 // Implement the Volume() function here
+  int volume (int height, int width, int length)
+  {
+      return height * width * length;
+  }
 ```
  
 ## Exercise 3 – Functions with structures
@@ -113,6 +118,11 @@ int volume(int height, int width, int length);
 
 // 1. Define a structure called Box
 // have the integer data types Height, Width, Length
+  struct box{
+  int height;
+  int width;
+  int length;
+  }
 
 // Do not change the main function
 int main() {
@@ -148,8 +158,10 @@ int main() {
 }
 
 // Implement the functions here
-```
-
+  int volume (int height, int width, int length)
+  {
+``` return height * width * lenght;
+  }
 ## Exercise 4 – Using Reference Type Parameters
 
 Implement the Input function to input values for the parameters length and width from the keyboard.
@@ -190,5 +202,12 @@ void print(int len, int wth) {
 }
 
 // Implement the Input Function here
-```
-
+  void input (int len, int wth)
+  {
+     cout<<"length";
+     cin >> len;
+```}
+  {
+   cout<<"width";
+     cin >> wth;
+  }
